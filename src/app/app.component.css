@@ -1,0 +1,36 @@
+.button{
+    width: 30%;
+    background:black;
+    height: 50px;
+    word-spacing: 10%;
+    text-align: center;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 7%;
+    margin-bottom: 5%;
+    border: none;
+    border-radius: 10px;
+    left: 15%;
+  }
+  .button1{
+    width: 30%;
+    background:black;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    left: 27%;
+  }

@@ -1,0 +1,121 @@
+<div class="wrapper">
+<div style="text-align:center">
+  <button class="button" (click)="viewStatus()" >
+      View status
+  </button>
+
+  <button
+      class="button1" 
+      (click)="setSeat()">
+       Set seat
+  </button>
+
+  <button
+      class="button2" 
+      (click)="clearSeat()">
+       CLEAR SEAT
+  </button>
+  </div>
+
+
+  <p *ngIf= viewStatusVar style="text-align:center">
+      TO VIEW<br>   
+  <select [(ngModel)]= "seatclass.depValue"  class="list" >
+    <option value="IT">IT</option>
+    <option value="CSE">CSE</option>
+    <option value="ECE">ECE</option>
+    <option value="CHEM">CHEM</option>
+    <option value="EEE">EEE</option>
+    <option value="MECH">MECH</option>
+    <option value="MCA">MCA</option> 
+ </select> 
+ <!--{{seatclass.depValue}} -->
+ <select [(ngModel)]= "seatclass.year" class="list" >
+  <option value="2019">2019</option>
+  <option value="2020">2020</option>
+  <option value="2021">2021</option>
+  <option value="2022">2022</option>
+  <option value="2023">2023</option> 
+  <option value="2024">2024</option>
+  <option value="2025">2025</option>
+  <option value="2026">2026</option>
+  <option value="2027">2027</option>
+  <option value="2028">2028</option>
+  <option value="2029">2029</option>
+  <option value="2030">2030</option> 
+</select> 
+<!--{{seatclass.year}} --><br>
+
+<button  class="button3" 
+(click)="search()">
+Search 
+</button><br>
+<label for="Depat_name">Department Name</label>:{{dep}}<br>
+<label for="Seat_alloc">Seat Allocated </label>:{{seat}}
+  </p>
+
+<div class="setseat">
+<div class="seatslec" *ngIf= showListBoxVar style="text-align:center">
+      SELECT YEAR <br>
+  <select [(ngModel)]= "naduraathiri_year" class="list"  (click)="aandavarFunction()">
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    <option value="2022">2022</option>
+    <option value="2023">2023</option> 
+    <option value="2024">2024</option>
+    <option value="2025">2025</option>
+    <option value="2026">2026</option>
+    <option value="2027">2027</option>
+    <option value="2028">2028</option>
+    <option value="2029">2029</option>
+    <option value="2030">2030</option> 
+  </select> 
+</div>
+<!--{{naduraathiri_year}} -->
+
+
+
+  <div *ngIf= setSeatVar style="text-align:center">
+    DEPARTMENTS<br>
+    <span *ngFor="let department of department_arr ; let i = index ">
+     
+      <input type="text" placeholder=" {{department}}"
+      [(ngModel)]="seatValue_arr[i]"> <br>
+   
+   </span>
+    
+    <button
+        class="button4" 
+        (click)="allocateSeat()">
+        DO ALLOCATE
+    </button>
+  </div>  
+  </div>
+
+<span *ngFor="let val of seatValue_arr ; let i = index" >
+<!--{{val}} : index{{i}} -->
+<br>
+</span>
+
+<p *ngIf= clearSeatVar style="text-align:center">
+
+  <select [(ngModel)]= "naduraathiri_year" class="form-group"  (click)="deletefac()">
+  <option value="2019">2019</option>
+  <option value="2020">2020</option>
+  <option value="2021">2021</option>
+  <option value="2022">2022</option>
+  <option value="2023">2023</option> 
+  <option value="2024">2024</option>
+  <option value="2025">2025</option>
+  <option value="2026">2026</option>
+  <option value="2027">2027</option>
+  <option value="2028">2028</option>
+  <option value="2029">2029</option>
+  <option value="2030">2030</option> 
+</select> <br>
+*note:Select Alloction Must be Deleted For the Selected Year
+</p> 
+  </div>
+
+  

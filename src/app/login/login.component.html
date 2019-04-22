@@ -1,0 +1,28 @@
+<div class="wrapper">
+  
+  <div class="login">LogIn</div>
+  <div class="signup">Sign Up</div>
+  
+  <div class="login-form">
+    <input type="text" placeholder="Email or Username" class="input"[(ngModel)]="user.Email" id="login_username"><br />
+
+    <input type="password" placeholder="Password" class="input" [(ngModel)]="user.passWord" id="login_password"><br />
+    <div class="radio_btn">
+  </div>
+    <br><br>
+
+    
+       <div class="btn" id="btn_login" (click)="onGetvalueLoginStaff()" >Login</div>
+    
+      
+ </div>
+
+   <div class="signup-form">
+       <input type="text" placeholder="Email or Username" class="input"[(ngModel)]="user1.Email" id="sign_username"><br />
+
+       <input type="password" placeholder="Password" class="input" [(ngModel)]="user1.passWord" id="sign_password"><br />
+    
+       <input type="password" placeholder="Confirm Password" class="input" [(ngModel)]="user1.confrimpassWord" id="sign_confirmpassword"><br />
+      <div class="btn" (click)="onGetvalueRegister()"id="btn_signup">Create account</div>
+   </div>
+</div>

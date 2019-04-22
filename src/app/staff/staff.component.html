@@ -1,0 +1,104 @@
+
+
+  
+
+
+ <div class="wrapper">
+ <br>
+        <button 
+        class="button3"
+        (click)="showFunction()"
+        >Show all</button> 
+ 
+  
+  
+   
+        <button
+         class="button4"
+         (click)="acceptFunction()" 
+         >Accepted </button>
+  
+     
+    
+        <button class="button5"
+        (click)="declineFunction()"
+        >Declined </button>
+      
+        <button 
+        class="button6"
+        (click)="dashboardFunction()"
+        >Seat Allocation</button> 
+
+  
+  
+  
+  <p class="alert alert-info" *ngIf=showVar>
+    In SHOW AREA
+    </p>
+  
+    <p class="alert alert-info" *ngIf=acceptVar>
+  
+      In ACCEPT AREA
+      </p>
+  
+      <p class="alert alert-info" *ngIf=declineVar>
+        In DECLINE AREA
+      </p>
+  
+  
+      <!-- Chats list goes here -->
+      <div class="container" *ngFor="let chat of allChats">
+        <h2>
+          First Name:-{{chat.fname}}
+        </h2> 
+        <h2>
+          Last Name:- {{chat.lname}}
+        </h2> 
+        <h2>
+          Date Of Birth:- {{chat.DOB}}
+        </h2> 
+        <h2>
+          GENDER:- {{chat.male}}
+        </h2> 
+      <h1> HSC DETAILS
+                    <h2>  Year of 12th Passing:- {{chat.pass_12}} </h2> 
+                     <h2> 12th Percentage:- {{chat.per_12}} </h2> 
+      </h1> 
+        <h1>  SSLC DETAILS
+              
+          <h2> Year of 10th Passing:- {{chat.pass_10}} </h2>
+            <h2>  10th Percentage:- {{chat.per_10}} </h2>
+                    
+        </h1> 
+        
+       <h1> DIPLOMA DETAILS
+             
+        <h2>  Year of Diploma Passing:- {{chat.pass_dip}} </h2>
+          <h2>  Degeree in Diploma:- {{chat.deg_dep}} </h2>
+                    
+       </h1> 
+       <h1> OTHER DETAILS
+        <h2>
+          Nationality:-{{chat.Nationality}}
+        </h2> 
+        <h2>
+         Community:- {{chat.Community}}
+        </h2> 
+        <h2>
+              Mobile Number:- {{chat.Mobile_Number}}
+        </h2> 
+        <h2>
+              Residential Address:- {{chat.Res_addr}}
+        </h2> 
+        <h2>
+              Premanent Address:- {{chat.Premanent_addr}}
+        </h2> 
+        </h1>
+          <p class="alert alert-info" *ngIf=showVar>
+         <button (click)="showID(chat.Email_db)">Approve</button>
+         <button (click)="decline(chat.Email_db)">Decline</button>
+        </p>
+          <br>
+      </div>
+  </div>
+  <router-outlet></router-outlet>
