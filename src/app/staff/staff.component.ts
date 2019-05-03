@@ -122,14 +122,16 @@ declineFunction():void {
 
 showID(id:String){
 
-  alert("after:"+id);
+  //alert("after:"+id);
 
   {
     this.http.get("http://localhost:3000/api/update/"+id).subscribe(
      data=>{
-       alert("post req sucessfull"+ id);
+       //alert("post req sucessfull"+ id);
        //alert(this.staff.Email);
      console.log("post req sucessfull",data);
+     alert("Application Approved");
+
      },
     error =>{
  
@@ -140,14 +142,15 @@ showID(id:String){
 }
 decline(id:String){
 
-  alert("after:"+id);
+  //alert("after:"+id);
 
   {
     this.http.get("http://localhost:3000/api/update/decline/"+id).subscribe(
      data=>{
-       alert("post req sucessfull"+ id);
+      // alert("post req sucessfull"+ id);
        //alert(this.staff.Email);
      console.log("post req sucessfull",data);
+     alert("Application Declined");
      },
     error =>{
  

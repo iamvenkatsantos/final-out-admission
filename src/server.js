@@ -54,6 +54,21 @@ app.post("/api/allocate_seat", (req, res)=>{
        
     
   });
+  app.post("/api/get_fewstatus", (req, res)=>{
+    seatObj.find({'year':  req.body.params.year,'depname': req.body.params.depValue},
+    {seatCount:1, depname : 1},
+  function (err, docs) {
+            if(err)
+              {
+                  res.status(500).json(err);
+              }
+          else if(docs)
+              {
+                  console.log(docs);
+                  res.status(200).json(docs);
+              }
+  });
+    });
 
   app.post("/api/get_status", (req, res)=>{
     //checking the value from angular 27-30
@@ -139,7 +154,7 @@ const info=mongoose.model('studentinfo',{
 })
 
 //const register=mongoose.model('register',{Email :String,password1:String, Confrimpassword : String})
-mongoose.connect('mongodb://localhost:27017/DBforInfo',{ useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/admission',{ useNewUrlParser: true });
 const Array=mongoose.model('Array',{ array:String})
 const register=mongoose.model('register',
 {
@@ -448,3 +463,30 @@ res.send(registerobj);
 console.log("ADDED");
 });
 });
+
+app.post("/api/del_content", (req, res)=>{
+
+   
+    //var dbname= req.body.params.year;
+    //console.log("dep name:" + dbname);
+    var db = mongoose.connect('mongodb://localhost:27017/admission' ,{ useNewUrlParser: true });
+     //var db = mongoose.connect('mongodb://localhost:27017/'+dbname ,{ useNewUrlParser: true });
+     /* 1st {}  similiar to where condition,
+      2nd {} selecting required fields to show,
+       3rd{} for sorting- "1" for ascending "-1" for descending*/
+     //  var Faculty = new Facultyobj();
+       //console.log(req.body.params.facultyname);
+   //var seatObjtemp = new seatObj();
+       seatObj.deleteMany( { year : req.body.params.year },function (err, docs) {
+                     if(err)
+                         {
+                             res.status(500).json(err);
+                         }
+                     else if(docs)
+                         {
+                             console.log(docs);
+                             res.status(200).json(docs);
+                         }
+       });
+       
+  });

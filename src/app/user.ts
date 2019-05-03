@@ -1,5 +1,5 @@
 export class User {
-    Email:string;
-    passWord:string;
-    confrimpassWord:string;
+    Email:String;
+    passWord:String;
+    confrimpassWord:String;
 }

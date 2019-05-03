@@ -1,4 +1,4 @@
-
+<!-- 
  <style>
   body {
    font-family: Arial, Helvetica, sans-serif;
@@ -144,148 +144,156 @@
    background-color: #f1f1f1;
    text-align: center;
  }
- </style>
- <div class="first" text-align="center" > 
-     <h1 align="center">ANJALAI AMMAL MAHALINGAM ENGINEERING COLLEGE</h1>
-       <h2 text-align="center">STUDENT REGISTRATION FORM</h2>
-     </div>
-  
+ </style> -->
+
+<div class="container-fluid"  style="font-family: 'Quando';">
+
+ <div class="row jumbotron">
+   <div class="col-md-1"></div>
+   <div class="col-md-10" style="margin-top:5%;margin-bottom:5%;"> 
+     <h1 align="center" style="font-size: 250%;font-family: 'Julius Sans One';color: #660000;"><strong>ANJALAI AMMAL - MAHALINGAM ENGINEERING COLLEGE</strong></h1><br>
+       <h3 align="center" style="margin-top:2%;font-family: 'Merienda One';color: #000033;">STUDENT REGISTRATION FORM</h3>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
  
+<div class="row">
+ <div class="col-md-1"></div>
+ <div class="col-md-10" style="margin-top:3%;">
  <form>
-   <div class="second" text-align="center" >
-         <input type="text" placeholder="Enter First Name" [(ngModel)]="user.Fname" name="Fname" required>
+   <div class="form-group" text-align="center" >
+      <div class="row">
+       <div class="col-md-3"></div>
+       <div class="col-md-6" style="margin-left:3%;margin-right:3%;">
+         <input type="text" placeholder="Enter First Name" class="form-control" [(ngModel)]="user.Fname" name="Fname" required>
+         <input type="text" placeholder="Enter Last Name" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Lname" name="Lname" required><br> 
          
-         <input type="text" placeholder="Enter Last Name" [(ngModel)]="user.Lname" name="Lname" required><br>
+         <label for="Date Of Birth" style="color: #001a66;"><b>Date Of Birth:</b></label>&nbsp;&nbsp;&nbsp;<br>
+         <input class="rightside" type="date"  class="form-control" [(ngModel)]="user.DOB" name="Date Of Birth" required><br>
          
-         <label for="Date Of Birth"><b>Date Of Birth:</b></label>&nbsp;&nbsp;&nbsp;<br>
-         <input class="rightside" type="date"  [(ngModel)]="user.DOB" name="Date Of Birth" required><br><br>
-         
-   
-         <label for="age"><b>Age as on 1st July 2019:</b></label>&nbsp;&nbsp;&nbsp;<br>
+         <label for="age" style="color: #001a66;"><b>Age as on 1st July 2019:</b></label>&nbsp;&nbsp;&nbsp;<br>
          <div class="ibtn">
-         <input type="month" name="age" [(ngModel)]="user.age" value="age"> Years/Month<br>
-        </div><br>
+          <input type="month" name="age" class="form-control" [(ngModel)]="user.age" value="age"> Years/Month<br>
+         </div><br>
        
-        <label for="Gender"><b>GENDER:</b></label>&nbsp;&nbsp;&nbsp;
-       <div class="rbtn">
-       <input type="radio" name="Gender"  [(ngModel)]="user.male" value="male"  required> Male                                            
-       <input type="radio" name="Gender" [(ngModel)]="user.male" value="female"> Female<br>                                           
-      </div>
+         <label for="Gender" style="color: #001a66;"><b>GENDER:</b></label>&nbsp;&nbsp;&nbsp;
+         <div class="rbtn">
+          <input type="radio" name="Gender" [(ngModel)]="user.male" value="male"  required> Male &nbsp;                                           
+          <input type="radio" name="Gender" [(ngModel)]="user.male" value="female"> Female<br>                                           
+         </div><br>
      
-       <input type="text" placeholder="Nationality"[(ngModel)]="user.Nationality" name="Nationality" required>
-                                        
-       <input type="text" placeholder="Religion"[(ngModel)]="user.religion" name="religion" required><br>
+         <input type="text" placeholder="Nationality" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Nationality" name="Nationality" required>                                
+         <input type="text" placeholder="Religion" style="margin-top:1%;" class="form-control" [(ngModel)]="user.religion" name="religion" required><br>
    
-     <label for="parent's Detail"><b>PERSONAL DETAIL:</b></label><br>
-     <input type="text" placeholder="Enter Parent/Guardian Name" [(ngModel)]="user.Family_name" name="Family Name" required>
-   
-     <input type="text" placeholder="Enter Parent/Guardian Occupation" [(ngModel)]="user.Family_occup" name="Family Occupation" required><br>
+         <label for="parent's Detail" style="color: #001a66;"><b>PERSONAL DETAIL:</b></label><br>
+         <input type="text" placeholder="Enter Parent/Guardian Name" class="form-control" [(ngModel)]="user.Family_name" name="Family Name" required>
+         <input type="text" placeholder="Enter Parent/Guardian Occupation" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Family_occup" name="Family Occupation" required>
+         <input type="text" placeholder="Enter Annual Income" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Family_income" name="Family income" required>
+
+         <input type="text" placeholder="Residential Address" style="margin-top:2%;" class="form-control" [(ngModel)]="user.Res_addr" name="Residential Address" required>
+         <input type="text" placeholder="Premanent Address" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Premanent_addr" name="Premanent Address" required>       
+      
+         <input type="text" placeholder="Mobile Number" style="margin-top:2%;" class="form-control" [(ngModel)]="user.Mobile_Number" name="Mobile Number" required>    
+         <input class="rightside"  type="text" placeholder="Enter Your Email" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Email" name="Email" required>
+         <input type="text" placeholder="Community" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Community" name="Community" required>
+         <input type="text" placeholder="Caste" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Caste" name="Caste" required><br>
+       
+         <label for="degree_type" style="color: #001a66;"><b>PROGRAMME APPLYING FOR:</b></label>&nbsp;&nbsp;&nbsp;<br>
+         <div class="rbtn">
+          <input type="radio" name="degree_type" [(ngModel)]="user.degree_BE" value="degree_BE"  required> B.E &nbsp;
+          <input type="radio" name="degree_type" [(ngModel)]="user.degree_BTECH" value="degree_BTECH"> B.TECH
+         </div><br>
      
-     <input type="text" placeholder="Enter Annual Income" [(ngModel)]="user.Family_income" name="Family income" required><br>
-      
-       <input type="text" placeholder="Residential Address"[(ngModel)]="user.Res_addr" name="Residential Address" required>
+         <label for="degree_type" style="color: #001a66;"><b>CHOICE OF BRANCHES APPPLYING FOR ORDER OF PREFERENCES</b></label>&nbsp;&nbsp;&nbsp;<br>
+           <input type="text" placeholder="CHOICE 1" class="form-control" [(ngModel)]="user.branch_choice1" name="branch_choice1" required>
+           <input type="text" placeholder="CHOICE 2" style="margin-top:1%;" class="form-control" [(ngModel)]="user.branch_choice2" name="branch_choice2" required>
+           <input type="text" placeholder="CHOICE 3" style="margin-top:1%;" class="form-control" [(ngModel)]="user.branch_choice3" name="branch_choice3" required>
+           <input type="text" placeholder="Qualifying Examination passed Medium of study" style="margin-top:1%;" class="form-control" [(ngModel)]="user.previous_medium" name="previous_medium" required>
+           <input type="text" placeholder="Name of the School last studied" style="margin-top:1%;" class="form-control" [(ngModel)]="user.previous_school" name="previous_school" required><br>
+           
+           <label for="previous_passing" style="color: #001a66;"><b>Month and year of Passing:</b></label><br>
+           <div class="ibtn">
+            <input type="month" name="previous_passing"class="form-control"  [(ngModel)]="user.previous_passing" value="previous_passing">
+           </div><br>
        
-       <input type="text" placeholder="Premanent Address"[(ngModel)]="user.Premanent_addr" name="Premanent Address" required><br>       
-      
-       <input type="text" placeholder="Mobile Number"[(ngModel)]="user.Mobile_Number" name="Mobile Number" required>
-             
-       <input class="rightside"  type="text" placeholder="Enter Your Email" [(ngModel)]="user.Email" name="Email" required>
-       
-       <input type="text" placeholder="Community"[(ngModel)]="user.Community" name="Community" required>
-       
-       <input type="text" placeholder="Caste"[(ngModel)]="user.Caste" name="Caste" required><br>
-       
-       <label for="degree_type"><b>PROGRAMME APPLYING FOR:</b></label>&nbsp;&nbsp;&nbsp;<br>
-       <div class="rbtn">
-       <input type="radio" name="degree_type"  [(ngModel)]="user.degree_BE" value="degree_BE"  required> B.E
-       <input type="radio" name="degree_type" [(ngModel)]="user.degree_BTECH" value="degree_BTECH"> B.TECH<br>
-     </div>
+         <label for="Gender" style="color: #001a66;"><b>NAME OF BOARD:</b></label>&nbsp;&nbsp;&nbsp;
+         <div class="rbtn">
+          <input type="radio" name="board" [(ngModel)]="user.board_state" value="board_state"  required> STATE BOARD &nbsp;
+          <input type="radio" name="board" [(ngModel)]="user.board_cbse" value="board_cbse"> CBSE &nbsp;
+          <input type="radio" name="board" [(ngModel)]="user.board_other" value="board_other"> OTHERS
+         </div><br>
      
-     <label for="degree_type"><b>CHOICE OF BRANCHES APPPLYING FOR ORDER OF PREFERENCES</b></label>&nbsp;&nbsp;&nbsp;<br>
-           <input type="text" placeholder="CHOICE 1"[(ngModel)]="user.branch_choice1" name="branch_choice1" required>
-           <input type="text" placeholder="CHOICE 2"[(ngModel)]="user.branch_choice2" name="branch_choice2" required>
-           <input type="text" placeholder="CHOICE 3"[(ngModel)]="user.branch_choice3" name="branch_choice3" required>
-      
-           <input type="text" placeholder="Qualifying Examination passed Medium of study"[(ngModel)]="user.previous_medium" name="previous_medium" required>
-           
-           <input type="text" placeholder="Name of the School last studied"[(ngModel)]="user.previous_school" name="previous_school" required><br>
-           
-           <label for="previous_passing"><b>Month and year of Passing:</b></label>&nbsp;&nbsp;&nbsp;<br>
-         <div class="ibtn">
-         <input type="month" name="previous_passing" [(ngModel)]="user.previous_passing" value="previous_passing"><br>
-        </div>
-       
-        <label for="Gender"><b>NAME OF BOARD:</b></label>&nbsp;&nbsp;&nbsp;
-       <div class="rbtn">
-       <input type="radio" name="board"  [(ngModel)]="user.board_state" value="board_state"  required> STATE BOARD<BR>
-       <input type="radio" name="board" [(ngModel)]="user.board_cbse" value="board_cbse"> CBSE<br>
-       <input type="radio" name="board" [(ngModel)]="user.board_other" value="board_other"> OTHERS<br>
+         <input type="text" placeholder="REGISTRATION No of previous Appearence"class="form-control" [(ngModel)]="user.previous_regno" name="previous_regno" required><br>
        </div>
-     
-       <input type="text" placeholder="REGISTRATION No of previous Appearence"[(ngModel)]="user.previous_regno" name="previous_regno" required><br>
-           
-           <label for="parent's Detail"><b>HSC DETAIL:</b></label><br>
-           <table class="table">
+       <div class="col-md-3"></div>
+      </div><br>
+
+         <div style="margin-left: 3%;margin-right: 3%;">
+           <label for="parent's Detail" style="color: #001a66;"><b>HSC DETAIL:</b></label><br>
+           <table class="table" style="margin-top: 1%;">
              <tr>
                <th>SUBJECT</th>
                <th>MARKS SCORED</th>
                <th>MAX MARKS</th>
              </tr>
-             <tr>
-               <td> <input class="table" type="text" placeholder="Language"[(ngModel)]="user.hsc_language" name="hsc_language" required></td>
-               <td> <input type="text" [(ngModel)]="user.hsc_language_marks" name="hsc_language_marks" required></td>
-               <td> <input type="text" [(ngModel)]="user.hsc_language_maxmark" name="hsc_language_maxmark" required></td>
+             <tr style="margin-top: 1%;">
+               <td> <input class="table" type="text" placeholder="Language"class="form-control" [(ngModel)]="user.hsc_language" name="hsc_language" required></td>
+               <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_language_marks" name="hsc_language_marks" required></td>
+               <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_language_maxmark" name="hsc_language_maxmark" required></td>
              </tr>
              <tr>
                  <td> English</td>
-                 <td> <input type="text" [(ngModel)]="user.hsc_english_marks" name="hsc_english_marks" required><br></td>
-                 <td> <input type="text" [(ngModel)]="user.hsc_english_maxmark" name="hsc_english_maxmark" required><br></td>
-               </tr>
-               <tr>
+                 <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_english_marks" name="hsc_english_marks" required><br></td>
+                 <td> <input type="text"class="form-control"  [(ngModel)]="user.hsc_english_maxmark" name="hsc_english_maxmark" required><br></td>
+             </tr>
+             <tr>
                    <td> Mathematics</td>
-                   <td> <input type="text" [(ngModel)]="user.hsc_maths_marks" name="hsc_maths_marks" required></td>
-                   <td> <input type="text" [(ngModel)]="user.hsc_maths_maxmark" name="hsc_maths_maxmark" required></td>
-                 </tr>
-                 <tr>
+                   <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_maths_marks" name="hsc_maths_marks" required></td>
+                   <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_maths_maxmark" name="hsc_maths_maxmark" required></td>
+             </tr>
+             <tr>
                      <td> Physics</td>
-                     <td> <input type="text" [(ngModel)]="user.hsc_physics_marks" name="hsc_physics_marks" required></td>
-                     <td> <input type="text" [(ngModel)]="user.hsc_physics_maxmark" name="hsc_physics_maxmark" required></td>
-                   </tr>
-                   <tr>
+                     <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_physics_marks" name="hsc_physics_marks" required></td>
+                     <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_physics_maxmark" name="hsc_physics_maxmark" required></td>
+             </tr>
+             <tr>
                        <td> Chemistry</td>
-                       <td> <input type="text" [(ngModel)]="user.hsc_chemistry_marks" name="hsc_chemistry_marks" required></td>
-                       <td> <input type="text" [(ngModel)]="user.hsc_chemistry_maxmark" name="hsc_chemistry_maxmark" required></td>
-                     </tr>
-                     <tr>
+                       <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_chemistry_marks" name="hsc_chemistry_marks" required></td>
+                       <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_chemistry_maxmark" name="hsc_chemistry_maxmark" required></td>
+             </tr>
+             <tr>
                       <td> TOTAL</td>
-                      <td> <input type="text" [(ngModel)]="user.hsc_total_marks" (click)="doSum()" name="hsc_total_marks" required></td>
-                      <td> <input type="text" [(ngModel)]="user.hsc_total_maxmark" (click)="doMaxsum()"  name="hsc_total_maxmark" required></td>
-                    </tr>
-          </table>
-              <input type="text" placeholder="Aggregrate Marks(Cut-Off)"[(ngModel)]="user.hsc_cutoff" (click)="doCutoff()" name="hsc_cutoff" required>
-              <input type="text" placeholder="12th Percentage"[(ngModel)]="user.hsc_percentage" (click)="doPercentage()" name="hsc_percentage" required><br>
+                      <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_total_marks" (click)="doSum()" name="hsc_total_marks" required></td>
+                      <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_total_maxmark" (click)="doMaxsum()"  name="hsc_total_maxmark" required></td>
+             </tr>
+           </table><br><br>
+
+              <input type="text" placeholder="Aggregrate Marks(Cut-Off)" class="form-control" [(ngModel)]="user.hsc_cutoff" (click)="doCutoff()" name="hsc_cutoff" required>
+              <input type="text" placeholder="12th Percentage" style="margin-top:1%;" class="form-control" [(ngModel)]="user.hsc_percentage" (click)="doPercentage()" name="hsc_percentage" required><br>
               
-               <label for="hostel"><b>DO YOU WISH TO STAY IN HOSTEL:</b></label>&nbsp;&nbsp;&nbsp;
-               <div class="rbtn">
-               <input type="radio" name="hostel"  [(ngModel)]="user.hostel_yes" value="hostel_yes"  required> YES
+              <label for="hostel" style="color: #001a66;"><b>DO YOU WISH TO STAY IN HOSTEL:</b></label>
+              <div class="rbtn">
+               <input type="radio" name="hostel" [(ngModel)]="user.hostel_yes" value="hostel_yes"  required> YES &nbsp;
                <input type="radio" name="hostel" [(ngModel)]="user.hostel_no" value="hostel_no"> NO<br>
-               </div>
+              </div><br>
              
-               <input type="text" placeholder="Participation in Sports,NCC & NSS"[(ngModel)]="user.hsc_xtra" name="hsc_xtra" required>
-         
-               <input type="text" placeholder="Achievements in culturals activities etc"[(ngModel)]="user.hsc_culturals" name="hsc_culturals" required><br>
+              <input type="text" placeholder="Participation in Sports,NCC & NSS" class="form-control" [(ngModel)]="user.hsc_xtra" name="hsc_xtra" required>
+              <input type="text" placeholder="Achievements in culturals activities etc" style="margin-top:1%;" class="form-control" [(ngModel)]="user.hsc_culturals" name="hsc_culturals" required><br>
           
-               <label for="first_graduvation"><b>ARE YOU AN FIRST GENERATION COLLEGE STUDENT:</b></label>&nbsp;&nbsp;&nbsp;
-               <div class="rbtn">
-               <input type="radio" name="first_graduvation"  [(ngModel)]="user.first_graduvation_yes" value="first_graduvation_yes"  required> YES
-               <input type="radio" name="first_graduvation" [(ngModel)]="user.first_graduvation_no" value="first_graduvation_no"> NO<br>
-               </div>
+            <label for="first_graduvation" style="color: #001a66;"><b>ARE YOU AN FIRST GENERATION COLLEGE STUDENT:</b></label>
+            <div class="rbtn">
+             <input type="radio" name="first_graduvation" [(ngModel)]="user.first_graduvation_yes" value="first_graduvation_yes"  required> YES &nbsp;
+             <input type="radio" name="first_graduvation" [(ngModel)]="user.first_graduvation_no" value="first_graduvation_no"> NO<br>
+           </div>
+         </div><br>
                          
               
-                         <button class="button" (click)=onGetvalue()>SUBMIT</button>
+        <button class="button" style="margin-bottom:2%; background-color: #00001a;" (click)=onGetvalue()>SUBMIT</button>
                          
-                       </div>
-                         </form>
-         
- 
-   
+   </div>
+ </form>
+ <div class="col-md-1"></div>
+ </div>
+ </div>
+          
+</div>   

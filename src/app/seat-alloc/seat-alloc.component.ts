@@ -147,7 +147,7 @@ iffun(){
   
 
 allocateSeat():void{
-  alert("in allocate seat");
+ // alert("in allocate seat");
 
 console.log("depvalue:" +this.department_arr + "seat allocate:" + this.seatValue_arr);
     this.http.
@@ -155,7 +155,8 @@ console.log("depvalue:" +this.department_arr + "seat allocate:" + this.seatValue
       { params: {department_arr: this.department_arr, seatValue_arr: this.seatValue_arr }}).
    subscribe(
           data  => {
-            console.log("seat allocated details done successfully ");
+            console.log("seat allocated details done successfully");
+            alert("Seats are Successfully Allocated");
           },
           error  => {
           console.log("Error", error);
@@ -169,7 +170,7 @@ console.log("depvalue:" +this.department_arr + "seat allocate:" + this.seatValue
          subscribe(
                 data  => {
                   console.log("deleted successfully ");
-                  //alert(this.depname+this.facultyname);
+                  //alert("Seats are Successfully Deleted");
                 },
                 error  => {
                 console.log("Error", error);

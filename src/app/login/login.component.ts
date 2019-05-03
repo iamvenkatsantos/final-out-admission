@@ -15,26 +15,27 @@ export class LoginComponent implements OnInit {
    gender:boolean;
    r1flag:boolean= false;
    r2flag:boolean= false;
-   
+   hbngtest:string='hhh';
+   TEmail:string='';
+
   user:Userlogin={
     Email:"",
     passWord:""
     }
     user1:User={
-   
       Email:"",
       passWord:"",
-      confrimpassWord:null
+      confrimpassWord:""
     }
     constructor(private http:HttpClient ,private router:Router){}
 
   ngOnInit() {
-    $(".signup-form").hide();
+    $(".signup-form").show();
     $(".signup").css("background", "grey");
     $(".login").css("background", "black");
     
     $(".login").click(function(){
-      $(".signup-form").hide();
+      $(".signup-form").show();
       $(".login-form").show();
       $(".signup").css("background", "grey");
       $(".login").css("background", "black");
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
     
     $(".signup").click(function(){
       $(".signup-form").show();
-      $(".login-form").hide();
+      $(".login-form").show();
       $(".login").css("background", "grey");
       $(".signup").css("background", "black");
     });
@@ -51,7 +52,7 @@ export class LoginComponent implements OnInit {
       $(".input").val("");
     });
       }
-      onGetvalueLogin(){
+     /* onGetvalueLogin(){
         this.http.post("http://localhost:3000/api",this.user).subscribe(
          data=>{
           // alert("post req sucessfull"+this.user);
@@ -63,17 +64,19 @@ export class LoginComponent implements OnInit {
      
          console.log("error",error);
          });
-        }
+        }*/
         onGetvalueLoginStaff(){
+         // alert(this.user.Email);
           this.http.post("http://localhost:3000/api/staff",this.user).subscribe(
            data=>{
             // alert("post req sucessfull"+this.user);
             // alert(this.user.Email+'\n'+this.user.passWord);
            console.log("post req sucessfull",data);
            this.router.navigate(["/","staff",], { queryParams:data});
+           alert("Login successfully");
            },
           error =>{
-       
+            alert("Invalid Login Details");
            console.log("error",error);
            });
           }
@@ -81,18 +84,27 @@ export class LoginComponent implements OnInit {
          this.user.Email="";
          this.user.passWord="";
         }
+        onclearsigin(){
+          this.user1.Email="";
+           this.user1.confrimpassWord="";
+           this.user1.passWord="";
+         }
         onGetvalueRegister(){
           //this.user.Email="";
           
-         // alert(this.user1.Email);
+         //alert(this.user1.Email);
           this.http.post("http://localhost:3000/apinew",this.user1).subscribe(
            data=>{
-             //alert("Name:"+this.user.Email+" "+"password:"+this.user.passWord+" "+"Confrimpassword:"+this.user.confrimpassWord);
+            // alert("Name:"+this.user1.Email+" "+"password:"+this.user1.passWord+" "+"Confrimpassword:"+this.user1.confrimpassWord);
              console.log("post req sucessfull",data);
-             
+             alert("Sign-in successfully");
+             this.user1.Email="";
+             this.user1.confrimpassWord="";
+             this.user1.passWord="";
+             this.onclearsigin();
            },
           error =>{
-       
+            alert("Invalid Sign-in Details");
            console.log("error",error);
            });
           }

@@ -81,6 +81,7 @@ export class FrontComponent {
        +'\n'+this.user.Family_income+'\n'+'\n'+this.user.Caste+'\n'+this.user.Nationality+'\n'+this.user.hsc_total_marks+'\n'+this.user.hsc_xtra
        +'\n'+this.user.previous_school+'\n'+this.user.religion+'\n'+this.user.age);*/
      console.log("post req sucessfull",data);
+     alert("Your data submitted successfully");
      },
     error =>{
  

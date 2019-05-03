@@ -1,104 +1,116 @@
+<div class="wrapper container-fluid"><br>
 
-
-  
-
-
- <div class="wrapper">
- <br>
+  <div class="row"  style="margin-top:3%;">
+    <div class="col-md-1 col-sm-1"></div>
+    <div class="col-md-3"> 
         <button 
-        class="button3"
+        class="btn" style="background-color: #00001a; color: aliceblue;"
         (click)="showFunction()"
-        >Show all</button> 
- 
-  
-  
-   
+        >Show all</button>
+    </div> 
+    <div class="col-md-3 col-sm-2">
         <button
-         class="button4"
+         class="btn" style="background-color: #00001a; color: aliceblue;"
          (click)="acceptFunction()" 
          >Accepted </button>
-  
-     
-    
-        <button class="button5"
+    </div>
+    <div class="col-md-3 col-sm-2">
+        <button class="btn" style="background-color: #00001a; color: aliceblue;"
         (click)="declineFunction()"
         >Declined </button>
-      
+    </div>
+    <div class="col-md-2 col-sm-2">
         <button 
-        class="button6"
+        class="btn" style="background-color: #00001a; color: aliceblue;"
         (click)="dashboardFunction()"
-        >Seat Allocation</button> 
+        >Seat Allocation</button>
+    </div>
+    <div class="col-md-1 col-sm-1"></div>
+  </div><br>
 
-  
-  
-  
-  <p class="alert alert-info" *ngIf=showVar>
-    In SHOW AREA
-    </p>
-  
-    <p class="alert alert-info" *ngIf=acceptVar>
-  
-      In ACCEPT AREA
+  <div class="row">
+    <div class="col-md-2 "></div>
+    <div class="col-md-8">
+      <p class="alert alert-info" align="center" style="width: 100%;" *ngIf=showVar>
+        ALL APPLICATIONS
       </p>
-  
-      <p class="alert alert-info" *ngIf=declineVar>
-        In DECLINE AREA
+      <p class="alert alert-info" align="center" *ngIf=acceptVar>
+        APPROVED APPLICATION
       </p>
+      <p class="alert alert-info" align="center" *ngIf=declineVar>
+        DECLINED APPLICATION
+      </p>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
   
   
-      <!-- Chats list goes here -->
-      <div class="container" *ngFor="let chat of allChats">
-        <h2>
-          First Name:-{{chat.fname}}
-        </h2> 
-        <h2>
-          Last Name:- {{chat.lname}}
-        </h2> 
-        <h2>
-          Date Of Birth:- {{chat.DOB}}
-        </h2> 
-        <h2>
-          GENDER:- {{chat.male}}
-        </h2> 
-      <h1> HSC DETAILS
-                    <h2>  Year of 12th Passing:- {{chat.pass_12}} </h2> 
-                     <h2> 12th Percentage:- {{chat.per_12}} </h2> 
-      </h1> 
-        <h1>  SSLC DETAILS
-              
-          <h2> Year of 10th Passing:- {{chat.pass_10}} </h2>
-            <h2>  10th Percentage:- {{chat.per_10}} </h2>
-                    
-        </h1> 
-        
-       <h1> DIPLOMA DETAILS
-             
-        <h2>  Year of Diploma Passing:- {{chat.pass_dip}} </h2>
-          <h2>  Degeree in Diploma:- {{chat.deg_dep}} </h2>
-                    
-       </h1> 
-       <h1> OTHER DETAILS
-        <h2>
-          Nationality:-{{chat.Nationality}}
-        </h2> 
-        <h2>
-         Community:- {{chat.Community}}
-        </h2> 
-        <h2>
-              Mobile Number:- {{chat.Mobile_Number}}
-        </h2> 
-        <h2>
-              Residential Address:- {{chat.Res_addr}}
-        </h2> 
-        <h2>
-              Premanent Address:- {{chat.Premanent_addr}}
-        </h2> 
-        </h1>
-          <p class="alert alert-info" *ngIf=showVar>
-         <button (click)="showID(chat.Email_db)">Approve</button>
-         <button (click)="decline(chat.Email_db)">Decline</button>
-        </p>
+  <!-- Application goes here -->
+  <div class="row">
+  <div class="col-md-2"></div>
+
+  <div class="col-md-8">
+  <div style="font-family: 'Yantramanav';margin-top: 4%;" *ngFor="let chat of allChats">
+    <div class="panel panel-default" >
+      <div class="panel-body">
+        <h3 style="margin-top: 0%;">
+          First Name: <h4>{{chat.fname}}</h4>
+        </h3> 
+        <h3>
+          Last Name: <h4>{{chat.lname}}</h4>
+        </h3> 
+        <h3 style="margin-top: 4%;">
+          Date Of Birth: <h4>{{chat.DOB}}</h4>
+        </h3> 
+        <h3 style="margin-top: 4%;">
+          GENDER: <h4>{{chat.male}}</h4>
+        </h3> 
+        <h3 style="margin-top: 4%;"> HSC DETAILS
+            <h4>  Year of 12th Passing: <h5>{{chat.pass_12}}</h5> </h4> 
+            <h4> 12th Percentage: <h5>{{chat.per_12}}</h5> </h4> 
+        </h3> 
+        <h3 style="margin-top: 4%;">  SSLC DETAILS   
+          <h4> Year of 10th Passing: <h5>{{chat.pass_10}}</h5> </h4>
+          <h4>  10th Percentage: <h5>{{chat.per_10}}</h5> </h4>         
+        </h3> 
+        <h3 style="margin-top: 4%;"> DIPLOMA DETAILS   
+          <h4>  Year of Diploma Passing: <h5>{{chat.pass_dip}}</h5> </h4>
+          <h4>  Degeree in Diploma: <h5>{{chat.deg_dep}}</h5> </h4>          
+        </h3>
+        <h3 style="margin-top: 4%;"> OTHER DETAILS
+          <h4>Nationality: {{chat.Nationality}}</h4>
+          <h4>Community: {{chat.Community}}</h4>
+        </h3> 
+        <h4 style="margin-top: 3%; color: #001a66;">
+              Mobile Number: <h5>{{chat.Mobile_Number}}</h5>
+        </h4> 
+        <h4 style="margin-top: 3%; color: #001a66;">
+              Residential Address: <h5>{{chat.Res_addr}}</h5>
+        </h4> 
+        <h4 style="margin-top: 3%; color: #001a66;">
+              Premanent Address: <h5>{{chat.Premanent_addr}}</h5>
+        </h4> 
+
+        <div class="row" style="margin-top: 4%;" *ngIf=showVar>
+          <div class="col-md-2"></div>
+          <div class="col-md-3">
+            <button class="btn" style="background-color: #00001a;color: aliceblue;width: 100%;" (click)="showID(chat.Email_db)">APPROVE</button>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-3">
+            <button class="btn" style="background-color: #00001a;color: aliceblue;width: 100%;" (click)="decline(chat.Email_db)">DECLINE</button>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
           <br>
       </div>
+    </div>
   </div>
+  </div>
+
+  <div class="col-md-2"></div>
+  </div>
+
+</div>
+
   <router-outlet></router-outlet>
